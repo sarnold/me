@@ -3,6 +3,13 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# pelican
+cache
+output
+pelicanconf_local.py
+*.pid
+themes/
+
 # C extensions
 *.so
 
