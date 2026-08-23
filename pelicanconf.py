@@ -40,7 +40,7 @@ SOCIAL = [
     ('github: Work', 'https://github.com/vctlabs'),
 ]
 
-DEFAULT_PAGINATION = 4
+DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
