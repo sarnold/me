@@ -18,7 +18,7 @@ jobs:
       contents: read
       pages: write
     with:
-      theme: "https://github.com/jvgomez/tuxlite_tbs.git"
+      theme: "https://github.com/sarnold/tuxlite_tbs.git"
       settings: "publishconf.py"
       requirements: "-r requirements.txt"
       deploy: ${{ (github.event_name == 'workflow_dispatch' && inputs.deploy == true) || (github.event_name == 'push' && github.ref_type == 'branch' && github.ref_name == github.event.repository.default_branch) }}
