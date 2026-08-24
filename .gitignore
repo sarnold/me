@@ -7,8 +7,30 @@ __pycache__/
 cache
 output
 pelicanconf_local.py
+*.crt
+*.key
+*.pem
 *.pid
 themes/
+docs/_build
+docs/*/_build
+build
+dist
+tags
+.tox
+.coverage
+htmlcov
+*.orig
+venv
+samples/output
+*.lock
+.pdm-python
+.vale
+.venv
+**/LC_MESSAGES/*.mo
+
+# direnv
+.envrc
 
 # C extensions
 *.so
