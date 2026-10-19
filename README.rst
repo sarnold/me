@@ -48,21 +48,46 @@ Example Workflow for Adding/Modifying Content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * cd into your local clone of source content
+* clone a theme repository
+
+  * all themes in `one repo`_ (submodules optional)
+  * `single theme`_ for speed (mainly for CI)
+
 * make your changes using your favorite editor
 
-* edit one of the static .rst files or add a new one -or-
-* make a new article file (using the default template, article_template.rst)
+  * edit one of the static .rst files or add a new one -or-
+  * make a new article file (using the default template, article_template.rst)
 
-  + tags are the typical "cloud" so more is better (up to a point)
-  + categories get menu entries, so think carefully about what you want
+    + tags are the typical "cloud" so more is better (up to a point)
+    + categories get menu entries, so think carefully about what you want
 
-* update/check the metadata and make sure it's what you want
-* save your changes, check with "git diff", view with local server/editor
-  (repeat as needed)
-* clean and build "pelican -s pelicanconf.py" (if errors, fix them and repeat)
+  * update/check the metadata and verify correctness
+  * save your changes, check with "git diff", view with local server/editor
+    (repeat as needed)
+  * clean and build "pelican -s pelicanconf.py" (if errors, fix them and repeat)
+
+.. _one repo: https://github.com/getpelican/pelican-themes
+.. _single theme: https://github.com/sarnold/tuxlite_tbs
 
 It actually goes pretty quick once you've done it a few times; not sure if
 vi has an rSt mode, but ReText is a decent little gtk-based .rst editor with
-a view mode (among other things).  Otherwise you can run the local python
-http server (e.g. "./develop_server.sh start 8080" or 8443 for ssl)
-to see how things get rendered.
+a view mode (among other things).
+
+Example commands
+----------------
+
+After making changes, generate output::
+
+  $ pelican content -s pelicanconf.py
+
+Command-line args override config options::
+
+  $ pelican content -s pelicanconf.py -t tuxlite_tbs
+
+Run builtin HTTP server to view ``output`` folder::
+
+  $ pelican --listen
+
+The Github pages workflow publish command::
+
+  $ pelican --settings publishconf.py --extra-settings SITEURL='"https://sarnold.github.io/me"' FEED_DOMAIN='"https://sarnold.github.io/me"' --output output/ --theme-path tuxlite_tbs

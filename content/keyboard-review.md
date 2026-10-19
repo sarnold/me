@@ -14,4 +14,4 @@ with USB cable after being unhappy with several Logitech membrane
 keyboards (both wired and wireless). I use this keyboard with my
 daily-driver (a Framework Ryzen 7 laptop) in my home office.
 
-I would definitely by this one again.
+I would definitely buy this one again.
